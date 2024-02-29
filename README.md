@@ -1,11 +1,3 @@
-# hrir_cmdline
-3D audio test app, uses a HRIR sofa file to produce realtime audio allowing you to position audio sources.
-
-
-
-under development.........
-
-
 Feb 2024 v1.01
 
 
@@ -16,9 +8,9 @@ Linux command line utility that uses Head Related Impulse Response (HRIR) sofa f
 >`(This code can drive audio levels to their fullest, so set a safe maximum with your system's volume control before use)`
 
 ### Further infomation
-https://en.wikipedia.org/wiki/Head-related_transfer_function
-https://sofacoustics.org/data/examples/
-https://github.com/sofacoustics/API_Cpp
+https://en.wikipedia.org/wiki/Head-related_transfer_function</br>
+https://sofacoustics.org/data/examples/</br>
+https://github.com/sofacoustics/API_Cpp</br>
 
 
 
@@ -94,7 +86,6 @@ Run app with './hrir_cmdline -h' to get help and usage examples.
 You can use multiple audio file that have the same samplerate as the sofa file. If you run with '-v' verbose on, it will show you what the sofa file samplerate is.
 
 Also shown is all the impulse entries like below, pos[0] is azimuth(degrees), then elevation(degrees), then radius in meters:
-<span style="color:blue">some *blue* text</span>
 ```lib_sofa_get_file_details() - Measure idx [000] -   pos[0]: 0.0000 pos[1]: -30.0000   pos[2]: 1.2000``` 
 
 
@@ -127,7 +118,6 @@ Load a layout with 'l' (file: zzlayout.txt)
 
 ```
 ```
-
 
 
 
