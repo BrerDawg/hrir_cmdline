@@ -11,7 +11,9 @@ Linux command line utility that uses Head Related Impulse Response (HRIR) sofa f
 https://en.wikipedia.org/wiki/Head-related_transfer_function</br>
 https://sofacoustics.org/data/examples/</br>		
 https://github.com/sofacoustics/API_Cpp</br>
-https://github.com/sofacoustics/API_Cpp/blob/master/libsofa/src/sofainfo.cpp 		//from https://github.com/sofacoustics/API_Cpp: useful code which builds a 'sofainfo' app that dumps sofa file details, the code shows the use of libsofa functions,  will 'assert' on some sofa files though, could just be versioning issues</br>
+</br>
+https://github.com/sofacoustics/API_Cpp/blob/master/libsofa/src/sofainfo.cpp</br>
+From https://github.com/sofacoustics/API_Cpp: useful code which builds a 'sofainfo' app that dumps sofa file details, the code shows the use of libsofa functions,  will 'assert' on some sofa files though, could just be versioning issues</br>
 
 
 ### Purpose
