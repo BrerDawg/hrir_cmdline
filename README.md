@@ -119,6 +119,8 @@ Use 'w z'  to adj elevation upward and downward.</br>
 
 'b' for bye/exit.
 
+
+'l' 'L'  and ':' described below:.</br> 
 You can save your current layout of sound positions and gain by using ':'  (file: zzlayout_new.txt)</br>
 Load a layout with 'l' or 'L' keep pressing it till you get to the layout you want, 8 are possible plus the the recordable 'zzlayout_new.txt'.</br> 
 The layout file format is: one audio src per line, values are: gain azimuth elevation radius filename.</br>
