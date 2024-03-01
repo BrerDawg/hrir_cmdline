@@ -135,14 +135,10 @@ Radius does nothing in the demo. The audio filenames are for ref only and not us
 
 
 ##### Download audio recordings to hear what this demo does:
-zzrec0.wav  is azimuth rotation 0->360 degs, (horizontal rotation).
-zzrec1.wav  is azimuth rotate to left ear at 90 degs, then elevation upwards to +80 deg, followed by downwards to -30 degs, back to 0 degs elevation, then it returns to front center.
-zzrec2.wav  is 3 sounds, the footsteps azimuth rotated 0->360 deg.
+zzrec0.wav  is azimuth rotation 0->360 degs, (horizontal rotation).</br>
+zzrec1.wav  is azimuth rotate to left ear at 90 degs, then elevation upwards to +80 deg, followed by downwards to -30 degs, back to 0 degs elevation, then it returns to front center.</br>
+zzrec2.wav  is 3 sounds, the footsteps azimuth rotated 0->360 deg.</br>
 
-
-
-```
-```
 
 
 
