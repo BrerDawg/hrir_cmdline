@@ -38,10 +38,6 @@ You also need one or more 16 bit PCM .wav or .au audio files that have the same 
 
 
 
-
-
-
-
 ### Code and Shortcomings
 Where pieces of code or ideas are originated from other people, the comments in source code will give links to who or where it came from.
 
@@ -123,15 +119,13 @@ Use 'w z'  to adj elevation upward and downward.</br>
 
 'b' for bye/exit.
 
-
-impRspIdx 0050 status on cmd line means the 51th impulse response pair in the sofa file is being used.
-
 You can save your current layout of sound positions and gain by using ':'  (file: zzlayout_new.txt)</br>
 Load a layout with 'l' or 'L' keep pressing it till you get to the layout you want, 8 are possible plus the the recordable 'zzlayout_new.txt'.</br> 
-The layout file format is one audio src per line, values are: gain azimuth elevation radius filename.</br>
-Radius does nothing in the demo. The audio filenames are for ref only and not used when loading a layout or at start up.
+The layout file format is: one audio src per line, values are: gain azimuth elevation radius filename.</br>
+Radius does nothing in the demo. The audio filenames are for ref only and not used when loading a layout or at start up.</br> 
+</br> 
 
-
+impRspIdx 0050 status on cmd line means the 51th impulse response pair in the sofa file is being used.</br> 
 
 
 ##### Download audio recordings to hear what this demo does:
