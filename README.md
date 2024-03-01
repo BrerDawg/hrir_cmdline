@@ -86,7 +86,7 @@ Run app with './hrir_cmdline -h' to get help and usage examples, or press 'h' on
 You can specify multiple audio files that have the same samplerate as the sofa file. If you run with '-v' verbose on, it will show you what the sofa file samplerate is. Don't use large audio files as mentioned above.</br>
 
 Eg:</br>
-hrircmdline sofa=SimpleFreeFieldHRIR_1.0.sofa aud=footsteps_rocks48K.wav</br>
+```hrir_cmdline sofa=SimpleFreeFieldHRIR_1.0.sofa aud=footsteps_rocks48K.wav aud=WaterDrips.wav</br>```
 
 There is a limit to how many files can be processed and is dependent on system frame rate and the power of you cpu, exceeding this limit will cause audio glitches.
 
