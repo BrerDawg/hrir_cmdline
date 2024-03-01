@@ -95,7 +95,7 @@ With verbose enabled on start up using -v, all sofa impulse entries like below a
 ```lib_sofa_get_file_details() - Measure idx [000] -   pos[0]: 0.0000 pos[1]: -30.0000   pos[2]: 1.2000``` 
 
 
-Press '1' to hear original unfiltered audio and adjust master gain levels with '[' and ']' keys.
+Press '1' to hear original unfiltered audio and adjust master gain levels with '[' and ']' keys.</br>
 Press '2' to hear 3D audio through HRIR impulse responses.
 
 ',' and '.' to adjust the currently selected audio file's replay gain, also '<'  '>'
