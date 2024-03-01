@@ -100,8 +100,8 @@ Press '2' to hear 3D audio through HRIR impulse responses.
 
 ',' and '.' to adjust the currently selected audio file's replay gain, also '<'  '>'
 
-use 'a s' to adj azimuth around the horizontal plane at your ear line.
-Use 'w z'  to adj elevation upward and downward.
+use 'a s' to adj azimuth around the horizontal plane at your ear line.</br>
+Use 'w z'  to adj elevation upward and downward.</br>
 
 '5' or '6' to select a different audio file from those you provided on start up, aud[0] status on cmd line means the 1st audio file is sel,  aud[1] is 2nd, etc.
 
