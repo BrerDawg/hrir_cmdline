@@ -13,7 +13,7 @@ https://sofacoustics.org/data/examples/</br>
 https://github.com/sofacoustics/API_Cpp</br>
 </br>
 https://github.com/sofacoustics/API_Cpp/blob/master/libsofa/src/sofainfo.cpp</br>
-From https://github.com/sofacoustics/API_Cpp: useful code which builds a 'sofainfo' app that dumps sofa file details, the code shows the use of libsofa functions,  will 'assert' on some sofa files though, could just be versioning issues</br>
+From https://github.com/sofacoustics/API_Cpp: useful code which builds a 'sofainfo' app that dumps sofa file details, the code shows the use of libsofa functions,  will 'assert' on some sofa files though, could just be versioning issues.</br>
 
 
 ### Purpose
@@ -65,7 +65,7 @@ Requires RTAudio library which allows use with pulseaudio or jack audio.
 
 Requires 'libsofa' and all its dependencies, get it from github and follow its build instructions, fortunately it also provides the all the libraries it depends on, in ../API_Cpp-master/libsofa/dependencies/lib/linux/
 
-If you don't want to install libsofa into your system folders, you can edit this app's Makefile and point paths to where you built libsofa, NOTE: the ordering of library filenames does matter. Path examples:
+You will need to edit this app's Makefile and point paths to where you built libsofa, NOTE: the ordering of library filenames does matter. Path examples:
 
 INCLUDE= -I/home/you/API_Cpp-master/libsofa/src/     etc etc
 LIBS= -L/home/you/API_Cpp-master/libsofa/dependencies/lib/linux/ -L/home/you/API_Cpp-master/libsofa/build/   etc etc
@@ -77,7 +77,7 @@ The libsofa build has a useful test app that tries to dump information about a s
 ### Build
 The code was developed with gcc on Ubuntu 20.04 64 bit.
 
-Build this app by typing 'make', no installation is required, run app from where you built it, it will need write permissions to allow the layout save and record features.
+Build this app by typing 'make', no installation is required, run app from where you built it, it will need write permissions to allow the 'layout save' and record features.
 
 
 ### Usage
@@ -115,7 +115,7 @@ Use 'w z'  to adj elevation upward and downward.
 
 '9' '0' for white noise or test tones.
 
-'|'  toggles record state, records current realtime audio to memory, record is saved as file 'zzrecord.wav' on exit.
+'|'  toggles record state, records realtime audio which you hear to memory, record is saved as file 'zzrecord.wav' on exit.
 
 'v' to toggle verbose.
 
@@ -128,7 +128,7 @@ impRspIdx 0050 status on cmd line means the 51th impulse response pair in the so
 
 You can save your current layout of sound positions and gain by using ':'  (file: zzlayout_new.txt)
 Load a layout with 'l' or 'L' keep pressing it till you get to the layout you want, 8 are possible plus the the recordable 'zzlayout_new.txt'. 
-The file format is one audio src per line, values are: gain azimuth elevation radius filename.
+The layout file format is one audio src per line, values are: gain azimuth elevation radius filename.
 Radius does nothing in the demo. The audio filenames are for ref only and not used when loading a layout or at start up.
 
 
