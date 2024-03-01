@@ -111,7 +111,7 @@ Use 'w z'  to adj elevation upward and downward.</br>
 
 '9' '0' for white noise or test tones.
 
-'|'  toggles record state, records realtime audio which you hear to memory, record is saved as file 'zzrecord.wav' on exit.
+'|'  toggles record state, records realtime audio into memory, record is saved as file 'zzrecord.wav' on exit.
 
 'v' to toggle verbose.
 
