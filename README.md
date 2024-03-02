@@ -61,11 +61,12 @@ Requires RTAudio library which allows use with pulseaudio or jack audio.
 
 Requires 'libsofa' and all its dependencies, get it from github and follow its build instructions, fortunately it also provides the all the libraries it depends on, in ../API_Cpp-master/libsofa/dependencies/lib/linux/
 
-You will need to edit this app's Makefile and point paths to where you built libsofa, NOTE: the ordering of library filenames does matter. Path examples:
+You will need to edit this app's Makefile and point paths to where you built libsofa. Path examples:
 
 ```INCLUDE= -I/home/you/API_Cpp-master/libsofa/src/     etc etc```</br>
 ```LIBS= -L/home/you/API_Cpp-master/libsofa/dependencies/lib/linux/ -L/home/you/API_Cpp-master/libsofa/build/   etc etc```</br>
 
+NOTE: the ordering of library filenames does matter.</br>
 
 The libsofa build has a useful test app that tries to dump information about a sofa file at: /home/you/API_Cpp-master/libsofa/build/sofainfo, it will also 'assert' and core dump on some files as mentioned above.
 
