@@ -18,7 +18,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 //hrir_cmdline.cpp
 
-//v1.01		26-feb-2024			//
+//v1.01		02-mar-2024			//
 
 
 //refer: https://github.com/sofacoustics/API_Cpp
@@ -1327,13 +1327,6 @@ for( int i = 0; i < cn_3d_sources_max; i++ )
 			}
 
 
-		//saf0.srate = srate;
-		//saf0.format = en_af_wav_pcm;
-		//saf0.encoding = 0;
-		//saf0.channels = 2;
-		//saf0.offset = 0;
-		//saf0.is_big_endian = 0;
-		//saf0.bits_per_sample = 16;
 		saf0.format = fmt;
 
 		if( st3d[i].af0.load_malloc( "", st3d[i].aud_fname, 0, saf0 ) == 0 )
