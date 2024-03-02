@@ -63,8 +63,8 @@ Requires 'libsofa' and all its dependencies, get it from github and follow its b
 
 You will need to edit this app's Makefile and point paths to where you built libsofa, NOTE: the ordering of library filenames does matter. Path examples:
 
-INCLUDE= -I/home/you/API_Cpp-master/libsofa/src/     etc etc
-LIBS= -L/home/you/API_Cpp-master/libsofa/dependencies/lib/linux/ -L/home/you/API_Cpp-master/libsofa/build/   etc etc
+```INCLUDE= -I/home/you/API_Cpp-master/libsofa/src/     etc etc</br>
+LIBS= -L/home/you/API_Cpp-master/libsofa/dependencies/lib/linux/ -L/home/you/API_Cpp-master/libsofa/build/   etc etc</br>```
 
 
 The libsofa build has a useful test app that tries to dump information about a sofa file at: /home/you/API_Cpp-master/libsofa/build/sofainfo, it will also 'assert' and core dump on some files as mentioned above.
@@ -94,7 +94,7 @@ With verbose enabled on start up using -v, all sofa impulse entries like below a
 ```lib_sofa_get_file_details() - Measure idx [000] -   pos[0]: 0.0000 pos[1]: -30.0000   pos[2]: 1.2000``` 
 
 
-Press '1' to hear original unfiltered audio and adjust master gain levels with '[' and ']' keys.</br>
+Press '1' to hear original unfiltered audio and adjust master gain levels with '[' and ']' keys.
 Press '2' to hear 3D audio through HRIR impulse responses.
 
 ',' and '.' to adjust the currently selected audio file's replay gain, also '<'  '>'
