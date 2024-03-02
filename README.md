@@ -63,8 +63,8 @@ Requires 'libsofa' and all its dependencies, get it from github and follow its b
 
 You will need to edit this app's Makefile and point paths to where you built libsofa, NOTE: the ordering of library filenames does matter. Path examples:
 
-```INCLUDE= -I/home/you/API_Cpp-master/libsofa/src/     etc etc</br>
-LIBS= -L/home/you/API_Cpp-master/libsofa/dependencies/lib/linux/ -L/home/you/API_Cpp-master/libsofa/build/   etc etc```</br>
+```INCLUDE= -I/home/you/API_Cpp-master/libsofa/src/     etc etc```</br>
+```LIBS= -L/home/you/API_Cpp-master/libsofa/dependencies/lib/linux/ -L/home/you/API_Cpp-master/libsofa/build/   etc etc```</br>
 
 
 The libsofa build has a useful test app that tries to dump information about a sofa file at: /home/you/API_Cpp-master/libsofa/build/sofainfo, it will also 'assert' and core dump on some files as mentioned above.
