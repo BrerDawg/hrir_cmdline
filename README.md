@@ -88,7 +88,7 @@ You can specify multiple audio files that have the same samplerate as the sofa f
 Eg:</br>
 ```hrir_cmdline sofa=SimpleFreeFieldHRIR_1.0.sofa aud=footsteps_rocks48K.wav aud=WaterDrips.wav</br>```
 
-There is a limit to how many files can be processed and is dependent on system frame rate and the power of you cpu, exceeding this limit will cause audio glitches.
+There is a limit to how many files can be processed and is dependent on system audio frame rate/size and your cpu FLOPS, exceeding this limit will cause audio glitches.
 
 With verbose enabled on start up using -v, all sofa impulse entries like below are displayed, idx is entry number, pos[0] is azimuth(degrees), then elevation(degrees), then radius(meters):</br>
 ```lib_sofa_get_file_details() - Measure idx [000] -   pos[0]: 0.0000 pos[1]: -30.0000   pos[2]: 1.2000``` 
