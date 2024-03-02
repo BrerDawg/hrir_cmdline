@@ -134,7 +134,7 @@ impRspIdx 0050 status on cmd line means the 51th impulse response pair in the so
 
 
 ##### Download audio recordings to hear what this demo does:
-zzrec0.wav  is azimuth rotation 0->360 degs, (horizontal rotation).</br>
+```zzrec0.wav```  is azimuth rotation 0->360 degs, (horizontal rotation).</br>
 zzrec1.wav  is azimuth rotate to left ear at 90 degs, then elevation upwards to +80 deg, followed by downwards to -30 degs, back to 0 degs elevation, then it returns to front center.</br>
 zzrec2.wav  has 3 sounds, the footsteps are azimuth rotated 0->360 deg.</br>
 
