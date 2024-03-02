@@ -56,7 +56,7 @@ hrir_cmdline: $(obj1)
 
 
 #dependancy list per each .o file
-hrir_cmdline.o: hrir_cmdline.h globals.h GCProfile.h audio_formats.h filter_code.h gc_rtaudio.h rt_code.h mysofa.h             #gc_srateconv.h
+hrir_cmdline.o: hrir_cmdline.h globals.h GCProfile.h audio_formats.h filter_code.h gc_rtaudio.h rt_code.h             #gc_srateconv.h
 GCProfile.o: GCProfile.h
 audio_formats.o: audio_formats.h GCProfile.h
 #gc_srateconv.o: gc_srateconv.h GCProfile.h
