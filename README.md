@@ -125,7 +125,7 @@ Press '2' to hear 3D audio through HRIR impulse responses.</br>
 
 
 'l' 'L'  and ':' described below:.</br> 
-You can save your current layout of sound positions and gain by using ':'  (file: zzlayout_new.txt)</br>
+You can save your current layout of sound positions and gain by using ':' key, (file: zzlayout_new.txt)</br>
 Load a layout with 'l' or 'L' keep pressing it till you get to the layout you want, 8 are possible plus the the recordable 'zzlayout_new.txt'.</br> 
 The layout file format is: one audio src per line, values are: gain azimuth elevation radius filename.</br>
 Radius does nothing in the demo. The audio filenames are for ref only and not used when loading a layout or at start up.</br> 
