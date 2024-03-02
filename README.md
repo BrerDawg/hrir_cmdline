@@ -130,7 +130,7 @@ The layout file format is: one audio src per line, values are: gain azimuth elev
 Radius does nothing in the demo. The audio filenames are for ref only and not used when loading a layout or at start up.</br> 
 </br> 
 
-impRspIdx 0050 status on cmd line means the 51th impulse response pair in the sofa file is being used.</br> 
+impRspIdx 0048 status on cmd line means the 49th impulse response pair in the sofa file is being used.</br> 
 
 
 ##### Download audio recordings to hear what this demo does:
