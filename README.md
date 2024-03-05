@@ -20,9 +20,9 @@ From https://github.com/sofacoustics/API_Cpp: useful code which builds a 'sofain
 This command line demo allows you to change audio source positioning in 3D and hear the change in realtime. It's only for headphones, in-ear variety work well.
 
 ### Theory
-SOFA files contain data for audio processing, some contain HRIR impulse responses which can be used to generate 3D audio. The impulse responses are used to filter user audio in the time domain. For 3D audio, they can be made in a number of ways, one way is with a sharp sound pulse emitter (i.e. impulse) from a device/speaker. The pulsed sound is position somewhere near a dummy head with ears (~1.5M). Each ear has an in-ear pickup microphone which record the impulse. The impulses ends up being gain and phase modulated by the shape head, and its ears (pinna), and dependent on where the sound was generated in 3D space relative to the head. The pair of impulse responses capture just one position in 3D space. The sound source is rotated to different angle/positions to build up good coverage. To reduce data, stepped/quantized angle positions (defined as Azimuth and Elevation) are only gathered in the sofa file. Therefore a pair of impulses is associated with one 3D position (set of angles, they could also be defined as an x,y,z vector). These impulse responses can later be used to convolve (fir filter) any mono audio source the user requires. The result is that the audio source under goes gain and phase changes which can mimic what your ears hear. Having access to all these impulse responses allows for movement of your audio source in 3D space. 
+SOFA files contain data for audio processing, some contain HRIR impulse responses which can be used to generate 3D audio. The impulse responses are used to filter user audio in the time domain. For 3D audio, they can be made in a number of ways, the method described here does not give the best results, but is simple to visualize. For this method a sharp sound pulse emitter (like a click sound [impulse]) from a device/speaker is used. The emitter is positioned somewhere near a dummy head with ears (~1.5M). Each ear has an in-ear pickup microphone which record the impulse. The impulses ends up being gain and phase modulated by the shape head, and its ears (pinna), and thererfore is dependent on where the sound was generated in 3D space relative to the head. The pair of impulse responses capture just one position in 3D space. The sound emmiter is rotated to different angle/positions to build up good coverage. To reduce data, stepped/quantized angle positions (defined as Azimuth and Elevation) are only gathered in the sofa file. Therefore a pair of impulses is associated with one 3D position (set of angles, they could also be defined as an x,y,z vector). These impulse responses can later be used to filter (convoled in a fir filter) a mono audio source the user requires. The result is that the audio source under goes similar gain and phase changes and mimics what ears hear. Having access to all these impulse responses allows for movement of your audio source in 3D space. 
 
-Everyone's head and ears are slightly different, so impulse responses work best when tailored to the individual. Using someone else's will cause cruder 3D location perception and is therefore a compromise.
+Everyone's head and ears are slightly different, so impulse responses work best when tailored to the individual, there are software tools avail to do this if you have the equipment. Using someone else's responses will cause cruder 3D location perception and is therefore a compromise.
 
 
 
@@ -138,9 +138,3 @@ impRspIdx 0048 status on cmd line means the 49th impulse response pair in the so
 ```zzrec0.wav```  is azimuth rotation 0->360 degs, (horizontal rotation).</br>
 ```zzrec1.wav```  is azimuth rotate to left ear at 90 degs, then elevation upwards to +80 deg, followed by downwards to -30 degs, back to 0 degs elevation, then it returns to front center.</br>
 ```zzrec2.wav```  has 3 sounds, the footsteps are azimuth rotated 0->360 deg.</br>
-
-
-
-
-
-
