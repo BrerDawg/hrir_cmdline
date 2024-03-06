@@ -63,7 +63,7 @@ Requires 'libsofa' and all its dependencies, get it from github and follow its b
 
 You will need to edit this app's Makefile and point paths to where you built libsofa. Path examples:
 
-```INCLUDE= -I/home/you/API_Cpp-master/libsofa/src/     etc etc```</br>
+```INCLUDE= -I/home/you/API_Cpp-master/libsofa/src/ `pkg-config --cflags rtaudio`     etc etc```</br>
 ```LIBS= -L/home/you/API_Cpp-master/libsofa/dependencies/lib/linux/ -L/home/you/API_Cpp-master/libsofa/build/   etc etc```</br>
 
 NOTE: the ordering of library filenames does matter.</br>
