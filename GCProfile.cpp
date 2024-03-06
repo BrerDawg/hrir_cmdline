@@ -140,6 +140,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 //-----v1.79 14-aug-2022 	//moded 'make_dir_file_list()' to include relative path, see :'st_mystr_make_dir_file_list_tag.path_relative'	!! this does not included a leading 'dir_sep'  '/' 
 //-----v1.80 27-dec-2023 	//moded 'GCProfile::Save()' to fix 'fprintf()' write size limit, now uses 'fwrite()'
 //-----v1.81 05-feb-2024 	//moded 'ExtractParamVal_with_delimit()' to return 0  if extracted param length is zero, e.g. this would happen when extracting 'events0=' when str contained this 'events0=,'
+//-----v1.82 04-mar-2024 	//removed unused var in printf which caused compiler warning
 
 #include "GCProfile.h"
 //note a line entry cannot be bigger that cnMaxIniEntrySize
@@ -7586,7 +7587,8 @@ if( dp != 0 )
 	{
 	if ( closedir( dp ) == -1 )
 		{
-		if( mystr_verbose ) printf( "make_dir_file_list() - error after calling closedir()\n", path.c_str() );
+//		if( mystr_verbose ) printf( "make_dir_file_list() - error after calling closedir()\n", path.c_str() );
+		if( mystr_verbose ) printf( "make_dir_file_list() - error after calling closedir()\n" );  //v1.82
 		return 0;
 		}
     }

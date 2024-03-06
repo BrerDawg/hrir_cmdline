@@ -13,7 +13,7 @@ CC=g++
 ifneq ($(OS),Windows_NT)			#linux?
 #	CFLAGS=-g -O0 -fpermissive -fno-inline -Dbuild_date="\"`date +%Y\ %b\ %d`\"" #-Dbuild_date="\"2016 Mar 23\""
 #	LIBS=-L/usr/X11/lib -L/usr/local/lib -lfltk_images /usr/local/lib/libfltk.a -lfltk_png -lfltk_z -ljpeg -lrt -lm -lXcursor -lXfixes -lXext -lXft -lfontconfig -lXinerama -lpthread -ldl -lX11 -lfftw3 #-ljack
-	INCLUDE= -I/usr/local/include -I/home/gc/API_Cpp-master/libsofa/dependencies/include/ -I/home/gc/API_Cpp-master/libsofa/src/
+	INCLUDE= -I/usr/local/include -I/home/gc/API_Cpp-master/libsofa/dependencies/include/ -I/home/gc/API_Cpp-master/libsofa/src/ `pkg-config --cflags rtaudio`
 	CFLAGS=-g -O3  -Wfatal-errors -Wfatal-errors -fpermissive -fno-inline -Dbuild_date="\"`date +%Y-%b-%d`\"" #-Dbuild_date="\"2016-Mar-23\""			#64 bit
 	LIBS= -L/home/gc/API_Cpp-master/libsofa/dependencies/lib/linux/ -L/home/gc/API_Cpp-master/libsofa/build/ -lrt -lasound `pkg-config --libs rtaudio` -lsofa -lnetcdf_c++4 -lnetcdf -lhdf5_hl -lhdf5 -lz -lcurl -ldl -lm     				#64 bit
 else								#windows?
