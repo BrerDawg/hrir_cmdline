@@ -84,7 +84,7 @@ You need to make sure you have no other audio processing turned on elsewhere whi
  
 Run app with './hrir_cmdline -h' to get help and usage examples, or press 'h' once running.
 
-You can specify multiple audio files that have the same samplerate as the sofa file. If you run with '-v' verbose on, it will show you what the sofa file samplerate is. Don't use large audio files as mentioned above.</br>
+You can specify multiple audio files that have the same samplerate as the sofa file (the samplerate is not checked, if you use some other srate, the filtering would be slighly out). If you run with '-v' verbose on, it will show you what the sofa file samplerate is. Don't use large audio files as mentioned above.</br>
 
 Eg:</br>
 ```hrir_cmdline sofa=SimpleFreeFieldHRIR_1.0.sofa aud=footsteps_rocks48K.wav aud=WaterDrips.wav</br>```
