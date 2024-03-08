@@ -63,7 +63,8 @@ Requires 'libsofa' and all its dependencies, get it from github and follow its b
 
 You will need to edit this app's Makefile and point paths to where you built libsofa. Path examples:
 
-```INCLUDE= -I/home/you/API_Cpp-master/libsofa/src/ `pkg-config --cflags rtaudio`    etc etc```</br>
+```INCLUDE= -I/home/you/API_Cpp-master/libsofa/src/ `pkg-config --cflags rtaudio`    etc etc```
+</br>
 ```LIBS= -L/home/you/API_Cpp-master/libsofa/dependencies/lib/linux/ -L/home/you/API_Cpp-master/libsofa/build/   etc etc```</br>
 
 NOTE: the ordering of library filenames does matter.</br>
@@ -87,7 +88,8 @@ Run app with './hrir_cmdline -h' to get help and usage examples, or press 'h' on
 You can specify multiple audio files that have the same samplerate as the sofa file (the samplerate is not checked, if you use some other srate, the filtering would be slighly out). If you run with '-v' verbose on, it will show you what the sofa file samplerate is. Don't use large audio files as mentioned above.</br>
 
 Eg:</br>
-```hrir_cmdline sofa=SimpleFreeFieldHRIR_1.0.sofa aud=footsteps_rocks48K.wav aud=WaterDrips.wav</br>```
+```hrir_cmdline sofa=SimpleFreeFieldHRIR_1.0.sofa aud=footsteps_rocks48K.wav aud=WaterDrips.wav```
+</br>
 
 There is a limit to how many files can be processed and is dependent on system audio frame rate/size and your cpu FLOPS, exceeding this limit will cause audio glitches.
 
