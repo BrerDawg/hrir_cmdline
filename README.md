@@ -57,13 +57,13 @@ There is a audio file limit of 8.
 
 ### Dependency
 
-Requires RTAudio library which allows use with pulseaudio or jack audio.
+Requires RTAudio library v6.01, this allows use with alsa, pulseaudio or jack audio.
 
 Requires 'libsofa' and all its dependencies, get it from github and follow its build instructions, fortunately it also provides the all the libraries it depends on, in ../API_Cpp-master/libsofa/dependencies/lib/linux/
 
 You will need to edit this app's Makefile and point paths to where you built libsofa. Path examples:
 
-```INCLUDE= -I/home/you/API_Cpp-master/libsofa/src/ `pkg-config --cflags rtaudio`     etc etc```</br>
+```INCLUDE= -I/home/you/API_Cpp-master/libsofa/src/ `pkg-config --cflags rtaudio`    etc etc```</br>
 ```LIBS= -L/home/you/API_Cpp-master/libsofa/dependencies/lib/linux/ -L/home/you/API_Cpp-master/libsofa/build/   etc etc```</br>
 
 NOTE: the ordering of library filenames does matter.</br>
