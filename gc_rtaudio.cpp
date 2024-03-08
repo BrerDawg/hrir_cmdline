@@ -20,7 +20,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 //gc_rtaudio.cpp
 //v1.01		03-jun-2019				//
-
+//v1.02		08-mar-2024				//update for rtaudio v6.01, RTAudio changed the way it handles errors
 
 #include "gc_rtaudio.h"
 
@@ -416,19 +416,21 @@ st_arg->audio_format = audio_format;
 RtAudio::StreamParameters iparams, oparams;
 
 
-try {
-	iparams.deviceId = start_in_device_num;
-	iparams.nChannels = channels_in;
-	iparams.firstChannel = first_chan_in;
+//try {
+iparams.deviceId = start_in_device_num;
+iparams.nChannels = channels_in;
+iparams.firstChannel = first_chan_in;
 
-	oparams.deviceId = start_out_device_num;
-	oparams.nChannels = channels_out;
-	oparams.firstChannel = first_chan_out;
+oparams.deviceId = start_out_device_num;
+oparams.nChannels = channels_out;
+oparams.firstChannel = first_chan_out;
 
-	unsigned int srate2 = srate;
+unsigned int srate2 = srate;
 
-	adac.openStream( &oparams, &iparams, audio_format, srate2, &frames, (RtAudioCallback)cb, (void *)st_arg, options );
-
+RtAudioErrorType rterr = adac.openStream( &oparams, &iparams, audio_format, srate2, &frames, (RtAudioCallback)cb, (void *)st_arg, options );
+if(  ( rterr == RTAUDIO_NO_ERROR ) || ( rterr ==  RTAUDIO_WARNING )  )	//v1.02
+	{
+	
 	st_arg->srate = srate2;
 	samplerate = srate2;
 
@@ -436,10 +438,16 @@ try {
 	framecnt = frames;
 
 	if( verbose) printf( "rtaud::start_stream_duplex() - opened stream: srate %d,  frame size: %d\n", st_arg->srate , st_arg->framecnt );
-	}
-catch ( RtAudioError& e ) 
-	{
-	string s1 = e.getMessage();
+	}	
+else{																	//v1.02
+//	}
+//catch ( RtAudioError& e ) 
+//	{
+	string s1 = adac.getErrorText();									//v1.02
+
+//    error.printMessage();
+ //   exit(EXIT_FAILURE);
+//	string s1 = e.getMessage();
 	
 	printf( "rtaud::start_stream_duplex() - error while opening stream:-\n'%s'\n", s1.c_str() );
 //    std::cout << '\n' << e.getMessage() << '\n' << std::endl;
@@ -456,7 +464,19 @@ st_arg->srate = samplerate = adac.getStreamSampleRate();
 if( verbose) printf( "rtaud::start_stream_duplex() - stream latency %d\n", st_arg->latency_in_bytes );
 
 
-
+rterr = adac.startStream();
+if( ( rterr == RTAUDIO_NO_ERROR ) || ( rterr ==  RTAUDIO_WARNING )  )	//v1.02
+	{
+	}
+else{
+																		//v1.02
+	string s1 = adac.getErrorText();
+	printf( "rtaud::start_stream_duplex() - error while starting stream:-\n'%s'\n", s1.c_str() );
+	if ( adac.isStreamOpen() ) adac.closeStream();
+	return 0;
+	}
+	
+/*
 try {
 	adac.startStream();
 	}
@@ -468,7 +488,7 @@ catch( RtAudioError& e )
 	if ( adac.isStreamOpen() ) adac.closeStream();
 	return 0;
 	}
-
+*/
 
 return 1;
 }
@@ -541,7 +561,9 @@ st_arg->audio_format = audio_format;
 RtAudio::StreamParameters params;
 
 
-try {
+//try {
+
+
 	params.deviceId = st_arg->device_num_out ;
 	params.nChannels = channels_out;
 	params.firstChannel = first_chan;
@@ -549,7 +571,9 @@ try {
 	unsigned int srate2 = srate;
 
 
-	adac.openStream( &params, 0, audio_format, srate2, &frames, (RtAudioCallback)cb, (void *)st_arg, options );
+RtAudioErrorType rterr = adac.openStream( &params, 0, audio_format, srate2, &frames, (RtAudioCallback)cb, (void *)st_arg, options );
+if( ( rterr == RTAUDIO_NO_ERROR ) || ( rterr ==  RTAUDIO_WARNING )  )	//v1.02
+	{
 
 	st_arg->srate = srate2;
 	samplerate = srate2;
@@ -559,12 +583,15 @@ try {
 
 	if( verbose) printf( "rtaud::start_stream_out() - opened stream: srate %d,  frame size: %d\n", st_arg->srate , st_arg->framecnt );
 	}
-catch ( RtAudioError& e ) 
-	{
-	string s1 = e.getMessage();
+//	}
+else{
+//catch ( RtAudioError& e ) 
+//	{
+//	string s1 = e.getMessage();
 	
+
+	string s1 = adac.getErrorText();									//v1.02
 	printf( "rtaud::start_stream_out() - error while opening stream:-\n'%s'\n", s1.c_str() );
-//    std::cout << '\n' << e.getMessage() << '\n' << std::endl;
 
 	device_num_out = -1;
     return 0;
@@ -578,6 +605,20 @@ if( verbose) printf( "rtaud::start_stream_out() - stream latency %d\n", st_arg->
 
 
 
+rterr = adac.startStream();												//v1.02
+if( ( rterr == RTAUDIO_NO_ERROR ) || ( rterr ==  RTAUDIO_WARNING )  )	//v1.02
+	{
+	}
+else{	
+	string s1 = adac.getErrorText();									//v1.02
+	
+	printf( "rtaud::start_stream_out() - error while starting stream:-\n'%s'\n", s1.c_str() );
+	if ( adac.isStreamOpen() ) adac.closeStream();
+	return 0;
+	}
+
+
+/*
 try {
 	adac.startStream();
 	}
@@ -589,7 +630,7 @@ catch( RtAudioError& e )
 	if ( adac.isStreamOpen() ) adac.closeStream();
 	return 0;
 	}
-
+*/
 
 return 1;
 }
@@ -662,7 +703,9 @@ st_arg->audio_format = audio_format;
 RtAudio::StreamParameters params;
 
 
-try {
+//try {
+
+
 	params.deviceId = st_arg->device_num_in;
 	params.nChannels = channels_in;
 	params.firstChannel = first_chan;
@@ -670,7 +713,10 @@ try {
 	unsigned int srate2 = srate;
 
 
-	adac.openStream( 0, &params, audio_format, srate2, &frames, (RtAudioCallback)cb, (void *)st_arg, options );
+RtAudioErrorType rterr = adac.openStream( 0, &params, audio_format, srate2, &frames, (RtAudioCallback)cb, (void *)st_arg, options );
+if( ( rterr == RTAUDIO_NO_ERROR ) || ( rterr ==  RTAUDIO_WARNING )  )	//v1.02
+	{
+
 
 	st_arg->srate = srate2;
 	samplerate = srate2;
@@ -680,10 +726,11 @@ try {
 
 	if( verbose) printf( "rtaud::start_stream_in() - opened stream: srate %d,  frame size: %d\n", st_arg->srate , st_arg->framecnt );
 	}
-catch ( RtAudioError& e ) 
-	{
-	string s1 = e.getMessage();
+//catch ( RtAudioError& e ) 
+else{
+//	string s1 = e.getMessage();
 	
+	string s1 = adac.getErrorText();									//v1.02
 	printf( "rtaud::start_stream_in() - error while opening stream:-\n'%s'\n", s1.c_str() );
 //    std::cout << '\n' << e.getMessage() << '\n' << std::endl;
 
@@ -698,7 +745,19 @@ st_arg->srate = samplerate = adac.getStreamSampleRate();
 if( verbose) printf( "rtaud::start_stream_in() - stream latency %d\n", st_arg->latency_in_bytes );
 
 
+rterr = adac.startStream();
+if( ( rterr == RTAUDIO_NO_ERROR ) || ( rterr ==  RTAUDIO_WARNING )  )	//v1.02
+	{
+	}
+else{	
+	string s1 = adac.getErrorText();									//v1.02
+	
+	printf( "rtaud::start_stream_in() - error while starting stream:-\n'%s'\n", s1.c_str() );
+	if ( adac.isStreamOpen() ) adac.closeStream();
+	return 0;
+	}
 
+/*
 try {
 	adac.startStream();
 	}
@@ -710,7 +769,7 @@ catch( RtAudioError& e )
 	if ( adac.isStreamOpen() ) adac.closeStream();
 	return 0;
 	}
-
+*/
 
 return 1;
 }
