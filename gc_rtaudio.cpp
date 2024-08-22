@@ -21,6 +21,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 //gc_rtaudio.cpp
 //v1.01		03-jun-2019				//
 //v1.02		08-mar-2024				//update for rtaudio v6.01, RTAudio changed the way it handles errors
+//v1.03		22-aug-2024				//added: #include <stdint.h>	
 
 #include "gc_rtaudio.h"
 
